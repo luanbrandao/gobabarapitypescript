@@ -1,0 +1,61 @@
+yarn add express
+npm install @types/express -D
+yarn add typescript -D
+// gera o arquivo tsconfig.json
+yarn tsc --init
+// gera os arquivos js
+yarn tsc
+// funciona igual o nodemom
+yarn add ts-node-dev -D
+
+yarn add eslint -D
+//ajuda na importação dos arquivos
+yarn add -D eslint-import-resolver-typescript
+yarn add prettier eslint-config-prettier eslint-plugin-prettier  -D
+yarn add uuidv4
+yarn add date-fns
+yarn add typeorm pg
+
+// anotações
+yarn add reflect-metadata
+yarn add bcryptjs
+yarn add install @types/bcryptjs
+yarn add jsonwebtoken
+yarn add -D @types/jsonwebtoken
+yarn add multer
+yarn add -D @types/multer
+
+ yarn add express-async-errors
+
+ // infra - decisões técnicas
+ // domínio - regras de negócios
+
+// interpleta os '@'
+yarn add tsconfig-paths -D
+
+//SOLID
+Single Responsability Principle
+Open Closed Principle
+Lisk Substitutions Princicle
+Interface Segragation Principle
+Dependency Invertion Principle
+
+// injeção de dependencia
+yarn add tsyringe
+
+yarn add jest -D
+yarn add ts-jest -D
+yarn add @types/jest
+
+yarn add cors
+yarn add @types/cors -D
+
+
+yarn add nodemailer
+yarn add @types/nodemailer -D
+
+<!-- templte de email -->
+ yarn add handlebars
+
+<!-- limpa p cache dos testes -->
+yarn jest --clearCache

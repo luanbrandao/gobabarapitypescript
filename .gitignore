@@ -1,0 +1,14 @@
+# Node modules
+node_modules
+node_modules/*
+coverage
+coverage/*
+# Adonis directory for storing tmp files
+dist
+
+# Environment variables, never commit this file
+.env
+
+tmp/*
+!tmp/.gitkeep
+
