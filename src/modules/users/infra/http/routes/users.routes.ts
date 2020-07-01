@@ -7,6 +7,7 @@ import uploadConfig from '@config/upload';
 // import Appointment from '../models/Appointment';
 // import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarService';
 
+import { celebrate, Segments, Joi } from 'celebrate';
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 import UsersController from '../controllers/UsersController';
 import UserAvatarController from '../controllers/UserAvatarController';
@@ -52,7 +53,18 @@ const userAvatarController = new UserAvatarController();
 //     return response.json(user);
 //   },
 // );
-userRouter.post('/', usersController.create);
+userRouter.post(
+  '/',
+  celebrate({
+    [Segments.BODY]: {
+      name: Joi.string().email().required(),
+      email: Joi.string().email().required(),
+      password: Joi.string().required(),
+      password_confirmation: Joi.string().valid(Joi.ref('password')),
+    },
+  }),
+  usersController.create,
+);
 
 userRouter.patch(
   '/avatar',

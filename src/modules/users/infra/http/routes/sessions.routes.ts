@@ -3,10 +3,10 @@ import { Router } from 'express';
 // import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
 // import { container } from 'tsyringe';
 
+import { celebrate, Segments, Joi } from 'celebrate';
 import SessionsController from '../controllers/SessionsController';
 
 const sessionsRouter = Router();
-
 const sessionsController = new SessionsController();
 // sessionsRouter.post('/', async (request, response) => {
 //   const { email, password } = request.body;
@@ -23,6 +23,15 @@ const sessionsController = new SessionsController();
 //   return response.json({ user, token });
 // });
 
-sessionsRouter.post('/', sessionsController.create);
+sessionsRouter.post(
+  '/',
+  celebrate({
+    [Segments.BODY]: {
+      email: Joi.string().email().required(),
+      password: Joi.string().required(),
+    },
+  }),
+  sessionsController.create,
+);
 
 export default sessionsRouter;

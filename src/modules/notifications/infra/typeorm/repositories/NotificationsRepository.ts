@@ -7,7 +7,7 @@ class NotificationsRepository implements INotificationsRepository {
   private ormRepository: MongoRepository<Notification>;
 
   constructor() {
-    // cria o repositorio
+    // cria o repositorio e usa a conexão com o mongo
     this.ormRepository = getMongoRepository(Notification, 'mongo');
   }
 

@@ -65,3 +65,8 @@ docker run --name mongodb -p 27017:27017 -d -t mongo
 docker start mongodb
 yarn add mongodb
 yarn add @types/mongodb -D
+
+
+<!-- Validações -->
+yarn add celebrate
+yarn add @types/hapi__joi -D
