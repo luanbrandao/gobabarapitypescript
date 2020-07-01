@@ -64,3 +64,4 @@ yarn jest --clearCache
 docker run --name mongodb -p 27017:27017 -d -t mongo
 docker start mongodb
 yarn add mongodb
+yarn add @types/mongodb -D
