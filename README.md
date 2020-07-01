@@ -59,3 +59,8 @@ yarn add @types/nodemailer -D
 
 <!-- limpa p cache dos testes -->
 yarn jest --clearCache
+
+<!-- Mongo -->
+docker run --name mongodb -p 27017:27017 -d -t mongo
+docker start mongodb
+yarn add mongodb
