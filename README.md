@@ -78,3 +78,6 @@ yarn add @types/hapi__joi -D
 
 <!-- variáveis de ambiente -->
 yarn add dotenv
+
+<!--  -->
+yarn add class-transformer
