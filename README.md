@@ -81,3 +81,6 @@ yarn add dotenv
 
 <!--  -->
 yarn add class-transformer
+
+<!-- Envio de email com AWS -->
+yarn add aws-sdk
