@@ -60,6 +60,11 @@ yarn add @types/nodemailer -D
 <!-- limpa p cache dos testes -->
 yarn jest --clearCache
 
+<!-- PostGres -->
+
+docker start gostack_postgres
+
+
 <!-- Mongo -->
 docker run --name mongodb -p 27017:27017 -d -t mongo
 docker start mongodb
@@ -70,3 +75,6 @@ yarn add @types/mongodb -D
 <!-- Validações -->
 yarn add celebrate
 yarn add @types/hapi__joi -D
+
+<!-- variáveis de ambiente -->
+yarn add dotenv
