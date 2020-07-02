@@ -84,3 +84,6 @@ yarn add class-transformer
 
 <!-- Envio de email com AWS -->
 yarn add aws-sdk
+
+<!-- Upload de arquivos aws -->
+yarn add mime

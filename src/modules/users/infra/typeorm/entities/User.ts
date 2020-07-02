@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-
+import uploadConfig from '@config/upload';
 import { Exclude, Expose } from 'class-transformer';
 
 @Entity('users')
@@ -35,9 +35,19 @@ class User {
   // campos virtuais
   @Expose({ name: 'avatar_url' })
   getAvatarUrl(): string | null {
-    return this.avatar
-      ? `${process.env.APP_API_URL}/files/${this.avatar}}`
-      : null;
+    if (!this.avatar) {
+      return null;
+    }
+
+    // eslint-disable-next-line default-case
+    switch (uploadConfig.driver) {
+      case 'disk':
+        return `${process.env.APP_API_URL}/files/${this.avatar}}`;
+      case 's3':
+        return `url`;
+      default:
+        return null;
+    }
   }
 }
 
