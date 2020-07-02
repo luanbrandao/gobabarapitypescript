@@ -1,34 +1,43 @@
-import { container } from 'tsyringe';
-import mailConfig from '@config/mail';
+// import { container } from 'tsyringe';
+// import mailConfig from '@config/mail';
 
-import IStorageProvider from './StorageProvider/models/IStorageProvider';
-import DiskStorageProvider from './StorageProvider/implementations/DiskStorageProvider';
+// import IStorageProvider from './StorageProvider/models/IStorageProvider';
+// import DiskStorageProvider from './StorageProvider/implementations/DiskStorageProvider';
 
-import IMailProvider from './MailProvider/models/IMailProvider';
-import EtherealMailProvider from './MailProvider/implementarions/EtherealMailProvider';
-import SESMailProvider from './MailProvider/implementarions/SESMailProvider';
+// import IMailProvider from './MailProvider/models/IMailProvider';
 
-import IMailTemplateProvider from './MailTemplatProvider/models/IMailTemplateProvider';
-import HandlebarsMailTemplateProvider from './MailTemplatProvider/implementatios/HandlebarsMailTemplateProvider';
+// import EtherealMailProvider from './MailProvider/implementarions/EtherealMailProvider';
+// import SESMailProvider from './MailProvider/implementarions/SESMailProvider';
+// import mailProvider from './MailProvider';
+
+// import IMailTemplateProvider from './MailTemplatProvider/models/IMailTemplateProvider';
+// import HandlebarsMailTemplateProvider from './MailTemplatProvider/implementatios/HandlebarsMailTemplateProvider';
+
+import './StorageProvider';
+
+import './MailTemplatProvider';
+
+// tem quer ser importado depois do IMailTemplateProvider
+import './MailProvider';
 
 // registerSingleton, não chama o construct
-container.registerSingleton<IStorageProvider>(
-  'StorageProvider',
-  DiskStorageProvider,
-);
+// container.registerSingleton<IStorageProvider>(
+//   'StorageProvider',
+//   DiskStorageProvider,
+// );
 
-container.registerSingleton<IMailTemplateProvider>(
-  'MailTemplateProvider',
-  HandlebarsMailTemplateProvider,
-);
+// container.registerSingleton<IMailTemplateProvider>(
+//   'MailTemplateProvider',
+//   HandlebarsMailTemplateProvider,
+// );
 
 // registerSingleton, chama o construct
-container.registerInstance<IMailProvider>(
-  'MailProvider',
-  // new EtherealMailProvider(),
-  // EtherealMailProvider tbm depende de injeção de dependência
+// container.registerInstance<IMailProvider>(
+//   'MailProvider',
+//   // new EtherealMailProvider(),
+//   // EtherealMailProvider tbm depende de injeção de dependência
 
-  mailConfig.driver === 'ethereal'
-    ? container.resolve(EtherealMailProvider)
-    : container.resolve(SESMailProvider),
-);
+//   mailConfig.driver === 'ethereal'
+//     ? container.resolve(EtherealMailProvider)
+//     : container.resolve(SESMailProvider),
+// );
