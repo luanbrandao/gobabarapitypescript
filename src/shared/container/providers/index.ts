@@ -20,6 +20,7 @@ import './MailTemplatProvider';
 // tem quer ser importado depois do IMailTemplateProvider
 import './MailProvider';
 
+import './CacheProvider';
 // registerSingleton, não chama o construct
 // container.registerSingleton<IStorageProvider>(
 //   'StorageProvider',

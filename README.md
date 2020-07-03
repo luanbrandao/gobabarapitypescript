@@ -87,3 +87,10 @@ yarn add aws-sdk
 
 <!-- Upload de arquivos aws -->
 yarn add mime
+
+<!-- Redis -->
+ docker run --name redis -p 6379:6379 -d -t redis:alpine
+ docker start redis
+
+yarn add ioredis
+yarn add @types/ioredis -D
