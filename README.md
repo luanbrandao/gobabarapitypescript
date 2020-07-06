@@ -94,3 +94,10 @@ yarn add mime
 
 yarn add ioredis
 yarn add @types/ioredis -D
+
+
+<!-- Segurança -->
+Brute force
+yarn add rate-limiter-flexible
+yarn add redis
+yarn add @types/redis
