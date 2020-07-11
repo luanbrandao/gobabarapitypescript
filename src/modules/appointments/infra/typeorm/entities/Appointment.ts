@@ -19,6 +19,9 @@ class Appointment {
   @Column()
   provider_id: string;
 
+  // eager, quando retornar os dados do Appointment, tbm retorna os dados do User
+  // lazy, busca dos dados do User apenas quando quer usando
+  //  const user = await appointments.user
   @ManyToOne(() => User)
   @JoinColumn({ name: 'provider_id' })
   provider: User;
