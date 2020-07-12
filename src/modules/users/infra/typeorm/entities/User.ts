@@ -42,7 +42,7 @@ class User {
     // eslint-disable-next-line default-case
     switch (uploadConfig.driver) {
       case 'disk':
-        return `${process.env.APP_API_URL}/files/${this.avatar}}`;
+        return `${process.env.APP_API_URL}/files/${this.avatar}`;
       case 's3':
         return `url`;
       default:
